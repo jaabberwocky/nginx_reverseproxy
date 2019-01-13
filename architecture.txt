@@ -1,0 +1,14 @@
+two subnets:
+nginx-web (containing nginx web server)
+nginx-app (containing a single application)
+
+[nginx-web]
+- ubuntu
+- web server with IGW attached
+- nginx with conf.d conf in this folder
+
+[nginx-app]
+- ubuntu
+- security group only allows from nginx-web tier
+- NO public IPs, only private
+- simple `python3 http.server -p 4321` to serve a simple index.html file
